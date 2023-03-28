@@ -1,0 +1,428 @@
+/* selector universal borra todos los margenes q agrega el navegador */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Kufam', cursive;
+    min-height: 100vh;
+}
+
+/* 20 PX ARRIBA Y ABAJO Y AUTO PARA CENTRAR  */
+header,
+.main,
+footer {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+
+
+/* OCULTAR EL CONTENIDO Q SOBREPASA EL CONTENEDOR -LIMPIA LOS FLOAT LEFT */
+
+header nav {
+    background: #528ed5;
+    overflow: hidden;
+}
+
+/* QUITAR PUNTOS EN LISTA   */
+header nav ul {
+    list-style: none;
+}
+
+/* SE APILAN HACIA LA IZQUIERDA Y TODOS LOS ELEMENTOS SE AFECTAN  */
+header nav ul li {
+    float: left;
+}
+
+/* DISPLAY BLOCK PODEMOS PERMITIR EL PADING HACIA ARRIBA Y ABAJO SINO SOLO FUNCIONA HACIA LOS LADOS  */
+header nav ul li a {
+    padding: 10px 20px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* CAMBIAR EL FONDO CUANDO PASA EL MAUSE  */
+header nav ul li a:hover {
+    background: #75ACEC;
+}
+
+.flex {
+    display: flex;
+}
+
+.main .articulos,
+.main article {
+    width: 100%;
+}
+
+
+
+/* border-box, el ancho y el alto se calculan teniendo en cuenta el contenido y también el border y el padding. Es decir, el border y el padding están incluidos en el ancho y alto.*/
+aside {
+    width: 100%;
+    background: #ffffff;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* CLEAR:BOTH LIMPIAR EL FLOAT: LEFT */
+footer {
+
+    background: #000;
+    color: #fff;
+    clear: both;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+:root {
+    --link-size: 64px;
+    --trans-props: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.wrapper,
+.social-icons {
+    display: flex;
+    align-items: flex;
+    justify-content: right;
+    flex-flow: row wrap;
+}
+
+/*** Containers and icons ***/
+
+.social-icon {
+    display: flex;
+
+    position: relative;
+    overflow: hidden;
+    /* Trim branded overlays */
+
+    width: var(--link-size);
+    height: var(--link-size);
+    margin: 8px;
+
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
+
+    text-decoration: none;
+
+    transition: var(--trans-props);
+}
+
+.social-icon i {
+    margin: auto;
+    /* Perfect centering thanks to parental flex */
+
+    font-size: 24px;
+    color: hsl(0, 0%, 0%);
+
+    z-index: 1;
+    /* Make sure icons will be on top */
+
+    transition: var(--trans-props);
+}
+
+/*** Branded overlays from the bottom ***/
+
+.social-icon:after {
+    content: "";
+
+    width: var(--link-size);
+    height: var(--link-size);
+
+    position: absolute;
+
+    transform: translate(0, var(--link-size));
+
+    border-radius: 50%;
+    transition: var(--trans-props);
+}
+
+.social-icon.twitter:after {
+    background-color: #55da34;
+}
+
+.social-icon.github:after {
+    background-color: #686b6e;
+}
+
+.social-icon.instagram:after {
+    background-image: linear-gradient(to bottom left,
+            #4f5bd5,
+            #962fbf,
+            #d62976,
+            #fa7e1e,
+            #feda75);
+}
+
+/*** Animations ***/
+
+.social-icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+.social-icon:hover i {
+    /*  transform: scale(1.1); */
+    color: #fff;
+}
+
+.social-icon:hover:after {
+    transform: translate(0) scale(1.2);
+}
+
+/* galery */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.container-galery {
+    padding: 25px 0;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.container-galery h1 {
+    position: relative;
+    margin-bottom: 45px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 44px;
+    text-transform: uppercase;
+    width: 100%;
+    color: #424242;
+}
+
+.gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70vh;
+}
+
+.item {
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    transition: flex 0.8s ease;
+
+
+}
+
+.item:hover {
+    flex: 7;
+}
+
+.item-1 {
+    background-image: url('../img/a1a.jpg');
+}
+
+.item-2 {
+    background-image: url('../img/nacho.jpg');
+}
+
+.item-3 {
+    background-image: url('../img/es.jpg');
+}
+
+.item-4 {
+    background-image: url('../img/tecmol.jpg');
+}
+
+.item-5 {
+    background-image: url('../img/prado.jpg');
+}
+
+.item-6 {
+    background-image: url('../img/sena.jpg');
+}
+
+.item-7 {
+    background-image: url('../img/iudc.jpg');
+}
+
+
+/* galery */
+
+
+/* Contact */
+.justify-center {
+    justify-content: center;
+}
+
+h2 {
+    margin: 0;
+    color: #528ed5;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-top: 5rem;
+}
+
+form {
+    width: 100%;
+    margin: auto;
+}
+
+
+input,
+textarea,
+button {
+    width: 100%;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+label {
+    color: #528ed5;
+}
+
+input,
+textarea {
+    margin: 0 0 1em;
+    border: 1px solid #91b7ff;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+textarea {
+    height: 4cm;
+}
+
+.button__submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.2rem;
+}
+
+.button-submit,
+button {
+    background: #528ed5;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.button-submit:hover,
+button:hover {
+    background: #3383e6;
+}
+
+input[type="checkbox"] {
+    width: 45px;
+}
+
+/* Cards */
+.container__grid-cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    width: 100%;
+}
+
+.containercard {
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.card-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in;
+}
+
+.card-body:hover {
+    transform: rotateY(180deg);
+}
+
+.front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    color: aliceblue;
+    border-radius: 10px;
+
+}
+
+.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    color: aliceblue;
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.front-1 {
+    background: url('../img/cars.jpg') no-repeat center center/ cover;
+}
+
+.back-1 {
+    background: url('../img/valo.jpg') no-repeat center center/ cover;
+}
+
+.front-2 {
+    background: url('../img/RICK.jpg') no-repeat center center/ cover;
+}
+
+.back-2 {
+    background: url('../img/fall.jpg') no-repeat center center/ cover;
+}
+
+
+
+.text h2 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 5px;
+    background: white;
+    background-size: 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.8em !important;
+}
